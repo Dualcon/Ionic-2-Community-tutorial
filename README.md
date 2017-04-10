@@ -356,4 +356,4 @@ Well done! Run your project with:
 
 $ ionic serve
 
-# Next let's work with Firebase.
+## At this point I created a branch called side-tab-menu. If you need you can clone it.
