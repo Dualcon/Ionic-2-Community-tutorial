@@ -1,0 +1,18 @@
+<ion-header>
+<ion-navbar>
+<button ion-button menuToggle>
+<ion-icon name="menu"></ion-icon>
+</button>
+<ion-title>Tabs</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-tabs>
+<ion-tab [root]="timelineTab" tabTitle="Timeline" tabIcon="information-circle"></ion-tab>
+<ion-tab [root]="profileTab" tabTitle="Profile" tabIcon="information-circle"></ion-tab>
+<ion-tab [root]="settingsTab" tabTitle="Settings" tabIcon="information-circle"></ion-tab>
+</ion-tabs>
+
+</ion-content>
