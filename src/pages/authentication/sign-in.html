@@ -1,0 +1,29 @@
+<ion-header>
+<ion-navbar>
+<button ion-button menuToggle>
+<ion-icon name="menu"></ion-icon>
+</button>
+<ion-title>Sign in</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<form [formGroup]="form" (ngSubmit)="signIn()">
+<ion-item>
+<ion-label>Email</ion-label>
+<ion-input type="email" formControlName="email"></ion-input>
+</ion-item>
+<ion-item>
+<ion-label>Password</ion-label>
+<ion-input type="password" formControlName="password"></ion-input>
+</ion-item>
+<button ion-button round type="submit" [disabled]="!form.valid">Sign in</button>
+</form>
+
+<button ion-button round (click)="navigate('signUp')">Sign up</button>
+<button ion-button round (click)="signInWithFacebook()">Facebook</button>
+<button ion-button round (click)="signInWithGoogle()">Google</button>
+<button ion-button round (click)="signInWithGithub()">GitHub</button>
+
+</ion-content>

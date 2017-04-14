@@ -3,8 +3,12 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { Login } from '../pages/login/login';
+import { FirebaseAuthentication } from '../providers/firebase-authentication';
+
+import { SignIn } from '../pages/authentication/sign-in';
+import { SignUp } from '../pages/authentication/sign-up';
 import { Tabs } from '../pages/tabs/tabs';
+import { About } from '../pages/about/about';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,12 +16,14 @@ import { Tabs } from '../pages/tabs/tabs';
 export class MyApp implements OnInit {
   
   @ViewChild(Nav) nav: Nav;
-  rootPage: any = Login;
+  isAuthenticated: boolean;
   
   constructor(
   public platform: Platform,
   public statusBar: StatusBar,
-  public splashScreen: SplashScreen) { }
+  public splashScreen: SplashScreen,
+  public firebaseAuthentication: FirebaseAuthentication
+  ) { }
 
   initializeApp(): void {
     this.platform.ready().then(() => {
@@ -25,26 +31,18 @@ export class MyApp implements OnInit {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-    });
+	this.navigate('tabs');
+	});
   }
 
-  openPage(page): void {
-    // Reset the content nav to have just this page, we wouldn't want the back button to show in this scenario.
-    this.nav.setRoot(page.component);
-  }
-
-navigate(page: string): void {
-	switch(page) {
-		  case 'login':
-		  this.nav.setRoot(Login);
-		  break;
-		  case 'tabs':
-		  this.nav.setRoot(Tabs);
-		  break;
-		  default:
-		  console.log('Page not found.');
+  navigate(page: string): void {
+	  this.firebaseAuthentication.getAuthenticated().subscribe((state: any) => {
+		  this.isAuthenticated = state;
+		  if(page == 'about') { return this.nav.setRoot(About); }
+		  if(page == 'tabs' && state) { return this.nav.setRoot(Tabs); }
+		  this.nav.setRoot(SignIn);
+		  });
 		  }
-	  }
 
 	ngOnInit(): void {
 	  this.initializeApp();
