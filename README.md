@@ -19,14 +19,14 @@ At the end of this tutorial what we learned?
 
 Let's code!
 
-# Create Ionic 2 project.
+# Create the Ionic 2 project.
 
 ## 1. Create a blank project.
 
 $ ionic start Community blank --v2
 
 
-# Create side menu.
+# Create the side menu.
 
 ## 1. Change src\app\app.html to looks like this:
 
@@ -1042,4 +1042,4 @@ $ ionic serve
 
 Create an user and watch how our protected routes works.
 
-If you need you can download this branch too, search for the firebase one.
+## If you need you can download this branch too, it calls firebase.
