@@ -1042,4 +1042,4 @@ $ ionic serve
 
 Create an user and watch how our protected routes works.
 
-## If you need you can download this branch too, it calls firebase.
+## If you need you can download this branch too. It calls firebase-authentication.
