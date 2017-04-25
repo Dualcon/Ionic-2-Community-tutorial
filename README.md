@@ -24,9 +24,7 @@ $ ionic start Community blank --v2
 
 # Create the side menu.
 
-## 1. Change src\app\app.html to looks like [this](https://gist.github.com/Dualcon/9bad932c0855d68e6758fa68c33f1eed).
-
-https://gist.github.com/Dualcon/9bad932c0855d68e6758fa68c33f1eed
+## 1. Change src\app\app.html to looks like this.
 
 ```html
 <ion-menu [content]="content">
@@ -1046,3 +1044,5 @@ Create an user and watch how our protected routes works.
 # Add a simple community system (posts and comments).
 
 ## If you need you can download this branch too. It calls firebase-database.
+
+[Side menu](./docs/side-menu).
