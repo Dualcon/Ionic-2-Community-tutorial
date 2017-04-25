@@ -26,7 +26,7 @@ $ ionic start Community blank --v2
 
 ## 1. Change src\app\app.html to looks like [this](https://gist.github.com/Dualcon/9bad932c0855d68e6758fa68c33f1eed).
 
-<script src="https://gist.github.com/Dualcon/9bad932c0855d68e6758fa68c33f1eed.js"></script>
+https://gist.github.com/Dualcon/9bad932c0855d68e6758fa68c33f1eed
 
 ```html
 <ion-menu [content]="content">
