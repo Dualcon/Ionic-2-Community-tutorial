@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { FirebaseAuthentication } from '../../providers/firebase-authentication';
 
+import { MyApp } from '../../app/app.component';
+
 @Component({
   selector: 'page-profile',
   templateUrl: 'profile.html',
@@ -15,17 +17,14 @@ currentUser: any;
   ) { }
 
   logout(): void {
-this.firebaseAuthentication.logout()
-.then(() => {
+this.firebaseAuthentication.logout();
+//.then(() => {
 	// User logged out.
-		});
+		//});
 	}
 
 ngOnInit(): void {
-	this.firebaseAuthentication.getAuthenticated()
-	.subscribe(user => {
-this.currentUser = user;
-});
-}	
+	this.currentUser = this.firebaseAuthentication.getUser();
+	}	
 
 }

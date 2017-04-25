@@ -1,21 +1,17 @@
 # The project
 
 The Community mobile app is an app where users can create Threads and then add Comments.
-A thread belongs to a specific category which you may change as you wish.
-Comments may also have Up and Down votes.
-A user may add a thread to his/her favorites collection.
 We want users to be able to upload profile pictures either using their mobile Camera or their Photo albums.
 We also want to add a specific View that displays info regarding the Forum app.
 Only authenticated users can view/create Threads or Comments or in other words, only authenticated users may use the Community app.
-With that said we should already start thinking about the views we need to create in our app.
-I can tell that we need at least three Tabs, one to display all Threads, another one for user’s profile info a last one for the app’s info.
-Each tab in Ionic can have nested views and hence the first one that initialy renders the threads, will allow the user to navigate and view a thread’s comments or create a new Thread or Comment.
 
 At the end of this tutorial what we learned?
 
 1. Create side menus.
 2. Create tab menus.
-3. Add Firebase authentication.
+3. Add Firebase authentication methods, email/password, Google, Facebook and Github (working on browser).
+4. Add a simple community system (posts and comments).
+5. Expand authentication methods to works on a mobile app.
 
 Let's code!
 
@@ -1043,3 +1039,6 @@ $ ionic serve
 Create an user and watch how our protected routes works.
 
 ## If you need you can download this branch too. It calls firebase-authentication.
+
+
+# Add a simple community system (posts and comments).

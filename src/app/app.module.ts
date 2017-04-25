@@ -9,16 +9,17 @@ import { AngularFireModule } from 'angularfire2';
 
 // Must export the config
 export const firebaseConfig = {
-  apiKey: 'YOUR-INFORMATION',
-  authDomain: 'YOUR-INFORMATION',
-  databaseURL: 'YOUR-INFORMATION',
-  storageBucket: 'YOUR-INFORMATION',
-  messagingSenderId: 'YOUR-INFORMATION'
+  apiKey: '<your-key>',
+  authDomain: '<your-project-authdomain>',
+  databaseURL: '<your-database-URL>',
+  storageBucket: '<your-storage-bucket>',
+  messagingSenderId: '<your-messaging-sender-id>'
 };
 
 import { MyApp } from './app.component';
 
 import { FirebaseAuthentication } from '../providers/firebase-authentication';
+import { FirebaseDatabase } from '../providers/firebase-database';
 
 import { SignIn } from '../pages/authentication/sign-in';
 import { SignUp } from '../pages/authentication/sign-up';
@@ -29,6 +30,8 @@ import { Profile } from '../pages/tabs/profile';
 import { Settings } from '../pages/tabs/settings';
 
 import { About } from '../pages/about/about';
+
+import { CommunityService } from '../providers/community-service';
 
 @NgModule({
   declarations: [
@@ -61,7 +64,9 @@ import { About } from '../pages/about/about';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-	FirebaseAuthentication
+	FirebaseAuthentication,
+	FirebaseDatabase,
+	CommunityService
 	]
 })
 export class AppModule {}

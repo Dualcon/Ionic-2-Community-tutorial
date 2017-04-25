@@ -5,5 +5,41 @@
 </ion-header>
 
 <ion-content padding>
-<h1>Timeline page.</h1>
+
+<h1>Check all your data.</h1>
+
+<ion-list no-lines inset>
+<ion-item *ngFor="let item of items | async">
+<ion-label floating>{{item | json}}</ion-label>
+</ion-item>
+</ion-list>
+
+<button ion-button round (click)="deleteAll()">Delete All</button>
+
+<form [formGroup]="form" (ngSubmit)="addPost()">
+<ion-item>
+<ion-input type="text" formControlName="text" placeholder="post"></ion-input>
+</ion-item>
+<button ion-button round type="submit" [disabled]="!form.valid">Add post</button>
+</form>
+
+<ion-list no-lines inset *ngFor="let item of posts | async">
+<ion-item>
+<ion-input type="text" #post value="{{item.text}}"></ion-input>
+</ion-item>
+
+<ion-list no-lines inset *ngFor="let comment of item.comments | async">
+<ion-item>
+<ion-label>{{comment.text}}</ion-label>
+</ion-item>
+</ion-list>
+
+<ion-item>
+<ion-input type="text" #comment placeholder="comment"></ion-input>
+</ion-item>
+<button ion-button round (click)="addComment(item.$key, comment.value)">Add comment</button>
+<button ion-button round (click)="updatePost(item.$key, post.value)">Update post</button>
+<button ion-button round (click)="deletePost(item.$key)">Delete post</button>
+</ion-list>
+
 </ion-content>

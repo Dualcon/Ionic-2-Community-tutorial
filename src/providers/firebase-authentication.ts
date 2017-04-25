@@ -10,7 +10,8 @@ private authState: FirebaseAuthState;
 constructor(
   public angularFire: AngularFire
   ) {
-	  angularFire.auth.subscribe((state: FirebaseAuthState) => {
+	  angularFire.auth
+	  .subscribe((state: FirebaseAuthState) => {
       this.authState = state;
 	  });
 	  }
@@ -54,4 +55,8 @@ logout(): firebase.Promise<void> {
     return this.angularFire.auth.logout();
   }
 
-  }
+  getUser() {
+	  return this.authState.auth;
+	  }
+	  
+}
