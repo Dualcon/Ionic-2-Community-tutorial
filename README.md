@@ -6,7 +6,7 @@ Only authenticated users can view/create Threads or Comments or in other words, 
 At the end of this tutorial what we learned?
 
 [1. Create an Ionic 2 App.](/docs/01-create-project.md)
-[2. Create side and tab menus.](02-side-menu.md)
-[3. Add Firebase authentication methods, email/password, Google, Facebook and Github (working on browser).](03-firebase-authentication.md)
-[4. Add a simple post system (posts and comments).](04-posts-system.md)
-[5. Expand the authentication methods to works on a mobile app.](05-expand-authentication.md)
+[2. Create side and tab menus.](/docs/02-side-menu.md)
+[3. Add Firebase authentication methods, email/password, Google, Facebook and Github (working on browser).](/docs/03-firebase-authentication.md)
+[4. Add a simple post system (posts and comments).](/docs/04-posts-system.md)
+[5. Expand the authentication methods to works on a mobile app.](/docs/05-expand-authentication.md)
