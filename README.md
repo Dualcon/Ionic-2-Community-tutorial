@@ -1045,4 +1045,4 @@ Create an user and watch how our protected routes works.
 
 ## If you need you can download this branch too. It calls firebase-database.
 
-[Side menu](/docs/side-menu.md).
+[Side menu](./docs/side-menu.md).
